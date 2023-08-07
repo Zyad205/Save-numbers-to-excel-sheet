@@ -8,7 +8,6 @@ def create_button(app, func):
     btn = ctk.CTkButton(app, text="Add number", command=func, text_color_disabled="#FFFFFF")
     btn.place(relx=0.5, rely=0.5, anchor="center")
 
-    return btn
 
 
 def create_entry(app, var):
@@ -110,7 +109,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.button = create_button(self, self.add_num)
+        create_button(self, self.add_num)
 
         self.entry_var = ctk.StringVar()
 
@@ -133,12 +132,8 @@ class App(ctk.CTk):
             self.wb.save("nums.xlsx")
             self.update()
             SuccessLabel(self)
-        else: 
+        else:
             FailLabel(self)
-
-            
-    
 
 
 App()
-     
